@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="px-8 pt-20 pb-10">
       <div className="p-1.5 rounded-[20px] bg-white">
         <div className="border-[2px] border-[#CEE8FF] rounded-[18px] bg-customBlue py-[74px] px-5 flex flex-col justify-center items-center">
-          <a href="#" className="mb-[55px]">
+          <a href="/" className="mb-[55px]">
             <img src={footerLogo} alt="footer-logo" />
           </a>
           <p className="text-2xl font-medium leading-tight text-white mb-10">

@@ -28,7 +28,7 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-            <a href='#' className='btn'>
+            <a href='/' className='btn'>
               ZÍSKAJTE UKÁŽKU
             </a>
           </nav>

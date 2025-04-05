@@ -16,7 +16,7 @@ const GetStarted = () => {
             Žiadne fixné poplatky. Spravodlivé účtovanie. Žiadne počiatočné
             investície.
           </p>
-          <a href="#" className="btn">Začíname</a>
+          <a href="/" className="btn">Začíname</a>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React from "react";
-import brandBg from "../assets/images/brands-bg.svg";
+// import brandBg from "../assets/images/brands-bg.svg";
 import intraxIcon from "../assets/images/intrax.svg";
 import silverStarIcon from "../assets/images/silver-star.svg";
 import xboxIcon from "../assets/images/xbox.svg";
@@ -7,7 +7,7 @@ import slackIcon from "../assets/images/slack.svg";
 import tinderIcon from "../assets/images/tinder.svg";
 import forbesIcon from "../assets/images/forbes.svg";
 import helekenIcon from "../assets/images/heleken.svg";
-import dottedBorder from "../assets/images/gradient-dotted-border.svg";
+// import dottedBorder from "../assets/images/gradient-dotted-border.svg";
 
 const BrandsLight = () => {
   const brandIcons = [

@@ -36,7 +36,7 @@ const Hero = () => {
                 Žiadne ďalšie náklady a poplatky, žiadny záväzok
               </li>
             </ul>
-            <a href="#" className="btn">Získajte ukážku</a>
+            <a href="/" className="btn">Získajte ukážku</a>
           </div>
           <div>
             <img src={heroImg} alt="hero-img" />
