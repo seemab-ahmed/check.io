@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/app/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -40,7 +42,13 @@ module.exports = {
           height: '54px',
           maxWidth: 'fit-content',
           width: '100%',
+          border: '2px solid #DE4278',
+          transition: '0.4s',
         },
+        '.btn:hover': {
+          backgroundColor: '#fff',
+          color: '#DE4278',
+        }
       });
     },
   ],
