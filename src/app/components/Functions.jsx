@@ -72,39 +72,37 @@ const Functions = () => {
   return (
     <section className="py-16">
       <div className="container">
-        <div>
-          <div className="text-center mb-10">
-            <h2 className="text-[40px] font-semibold leading-tight text-customBlue mb-6">
-              Funkcie dochádzky
-            </h2>
-            <p className="text-lg font-normal leading-normal text-customDarkGrayLight">
-              Všetky funkcie, ktoré potrebujete pre dochádzkový systém
-            </p>
-          </div>
-          <div className="p-1.5 rounded-[20px] bg-white">
-            <div className="grid grid-cols-3 gap-8 border-[2px] border-[#CEE8FF] rounded-[18px] bg-[#EBF5FF] p-[26px]">
-              {features.map((item, index) => (
-                <div key={index} className="bg-white rounded-xl p-1.5">
-                  <div className="border border-[#C8E3FF] bg-white rounded-[10px] py-8 px-10 h-full">
-                    <figure className="mb-6">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        width={70}
-                        height={70}
-                        className="mx-auto"
-                      />
-                    </figure>
-                    <h3 className="text-[22px] font-semibold text-[#2C2C2C] mb-2 text-center">
-                      {item.title}
-                    </h3>
-                    <p className="text-base text-[#6B6B6B] leading-normal text-center">
-                      {item.description}
-                    </p>
-                  </div>
+        <div className="text-center mb-10">
+          <h2 className="text-[40px] font-semibold leading-tight text-customBlue mb-6">
+            Funkcie dochádzky
+          </h2>
+          <p className="text-lg font-normal leading-normal text-customDarkGrayLight">
+            Všetky funkcie, ktoré potrebujete pre dochádzkový systém
+          </p>
+        </div>
+        <div className="p-1.5 rounded-[20px] bg-white">
+          <div className="grid grid-cols-3 gap-8 border-[2px] border-[#CEE8FF] rounded-[18px] bg-[#EBF5FF] p-[26px]">
+            {features.map((item, index) => (
+              <div key={index} className="bg-white rounded-xl p-1.5">
+                <div className="border border-[#C8E3FF] bg-white rounded-[10px] py-8 px-10 h-full">
+                  <figure className="mb-6">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      width={70}
+                      height={70}
+                      className="mx-auto"
+                    />
+                  </figure>
+                  <h3 className="text-[22px] font-semibold text-[#2C2C2C] mb-2 text-center">
+                    {item.title}
+                  </h3>
+                  <p className="text-base text-[#6B6B6B] leading-normal text-center">
+                    {item.description}
+                  </p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
