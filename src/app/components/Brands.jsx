@@ -80,7 +80,7 @@ const Brands = () => {
           {brandIcons.map((icon, index) => (
             <div key={index} className="flex justify-center items-center">
               <Image
-                class="w-full"
+                className="w-full"
                 src={icon}
                 alt={`Brand ${index + 1}`}
 
