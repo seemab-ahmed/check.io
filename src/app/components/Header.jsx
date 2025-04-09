@@ -21,8 +21,8 @@ const Header = () => {
     <header className='py-10 fixed top-0 left-0 w-full bg-white shadow-custom-blue z-50'>
       <div className="container">
         <div className='flex items-center justify-between'>
-          <Link href="/" className='-mt-7'>
-            <Image src={logo} alt="Logo" width={200} height={63} priority />
+          <Link href="/" className='-mt-5 md:-mt-7 w-[160px] md:w-[200px]'>
+            <Image src={logo} alt="Logo" width={'100%'} height={63} priority />
           </Link>
 
           {/* Hamburger Icon (mobile only) */}

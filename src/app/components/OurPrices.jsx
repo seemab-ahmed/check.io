@@ -40,7 +40,7 @@ const OurPrices = () => {
       <Image
         src={dottedBorder}
         alt="border"
-        className="absolute right-0 -bottom-[100px]"
+        className="absolute right-0 -bottom-10 md:-bottom-[100px] w-[40px] md:w-[103px]"
         width={'100%'}
         height={'100%'}
       />

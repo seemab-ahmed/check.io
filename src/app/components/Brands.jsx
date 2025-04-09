@@ -28,8 +28,8 @@ const brandIcons = [
 const Brands = () => {
   return (
     <section
-    suppressHydrationWarning={true}
-      className="bg-cover bg-center py-20 xl:py-[188px] relative"
+      suppressHydrationWarning={true}
+      className="bg-cover bg-center py-20 md:py-[188px] relative"
       style={{ backgroundImage: `url(${brandBg.src})` }}
     >
       {/* Dotted Border Decoration */}
@@ -44,15 +44,22 @@ const Brands = () => {
 
       <div className="container">
         {/* Mobile Slider */}
-        <div className="block md:hidden">
+        <div className="block xl:hidden">
           <Swiper
             modules={[Autoplay]}
             spaceBetween={20}
-            slidesPerView={3}
             loop={true}
             autoplay={{
               delay: 2000,
               disableOnInteraction: false,
+            }}
+            breakpoints={{
+              0: {
+                slidesPerView: 2,
+              },
+              768: {
+                slidesPerView: 4,
+              },
             }}
           >
             {brandIcons.map((icon, index) => (
@@ -60,8 +67,8 @@ const Brands = () => {
                 <Image
                   src={icon}
                   alt={`Brand ${index + 1}`}
-                  width={80}
-                  height={80}
+                  width={'100%'}
+                  height={'100%'}
                 />
               </SwiperSlide>
             ))}
@@ -69,14 +76,14 @@ const Brands = () => {
         </div>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-8 relative z-20">
+        <div className="hidden xl:grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-8 relative z-20">
           {brandIcons.map((icon, index) => (
             <div key={index} className="flex justify-center items-center">
               <Image
-                className="w-full"
+                class="w-full"
                 src={icon}
                 alt={`Brand ${index + 1}`}
-               
+
               />
             </div>
           ))}
