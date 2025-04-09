@@ -63,32 +63,34 @@ img {
 
 /* global css end */
 
+@media (min-width:1281px) {
 
-/* steps-detail-row css start */
-.steps-detail-row .step-card {
-  border: none;
+  /* steps-detail-row css start */
+  .steps-detail-row .step-card {
+    border: none;
+  }
+
+  .steps-detail-row .step-card:first-child {
+    border-bottom-right-radius: 0;
+    margin-top: 30px;
+  }
+
+  .steps-detail-row .step-card:nth-child(2) {
+    margin-top: 150px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+  }
+
+  .steps-detail-row .step-card:nth-child(3) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .steps-detail-row .step-card:last-child {
+    margin-top: 180px;
+    border-top-left-radius: 0;
+  }
+
+  /* steps-detail-row css end */
 }
-
-.steps-detail-row .step-card:first-child {
-  border-bottom-right-radius: 0;
-  margin-top: 30px;
-}
-
-.steps-detail-row .step-card:nth-child(2) {
-  margin-top: 150px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-
-}
-
-.steps-detail-row .step-card:nth-child(3) {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.steps-detail-row .step-card:last-child {
-  margin-top: 180px;
-  border-top-left-radius: 0;
-}
-
-/* steps-detail-row css end */

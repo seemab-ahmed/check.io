@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import statsBg from '@/app/images/stats-bg.png';
 import statsCardImg1 from '@/app/images/stat-img1.svg';
@@ -38,22 +36,22 @@ const Stats = () => {
   ];
 
   return (
-    <section className="py-[120px]">
+    <section className="py-10 xl:py-[120px]">
       <div className="container">
         <div
-          className="py-20 rounded-[18px] overflow-hidden relative"
+          className="py-20 px-3  rounded-[18px] overflow-hidden relative"
           style={{ backgroundImage: `url(${statsBg})` }}
         >
           <div
             className="absolute left-0 top-0 w-full h-full"
             style={{ backgroundColor: `rgba(0, 66, 124, 0.86)` }}
           ></div>
-          <div className="flex justify-between items-center flex-wrap relative z-[1] max-w-[1320px] mx-auto w-full">
+          <div className="flex justify-between items-center gap-5 md:gap-0 flex-col md:flex-row flex-wrap relative z-[1] max-w-[1320px] mx-auto w-full">
             {statsData.map((item, index) => (
               <div key={index} className="flex flex-col justify-center items-center">
                 <Image src={item.icon} alt={item.label} className="mb-5" width={'100%'} height={'100%'} />
-                <span className="text-[43px] font-bold leading-tight text-white mb-4">{item.value}</span>
-                <span className="text-xl font-normal leading-normal text-white">{item.label}</span>
+                <span className="text-3xl xl:text-[43px] font-bold leading-tight text-white mb-4">{item.value}</span>
+                <span className="text-base xl:text-xl font-normal leading-normal text-white">{item.label}</span>
               </div>
             ))}
           </div>

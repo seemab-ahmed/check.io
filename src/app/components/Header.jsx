@@ -33,7 +33,7 @@ const Header = () => {
               aria-label="Toggle Menu"
             >
               <span
-                className={`h-1 w-full bg-black transition-transform duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}
+                className={`h-1 w-full bg-black transition-transform duration-300 ${isOpen ? 'rotate-45 translate-y-[0.7rem]' : ''}`}
               />
               <span
                 className={`h-1 w-full bg-black transition-opacity duration-300 ${isOpen ? 'opacity-0' : ''}`}
@@ -49,13 +49,13 @@ const Header = () => {
             <ul className="flex items-center gap-5 2xl:gap-10">
               {navItems.map((item, index) => (
                 <li key={index}>
-                  <Link href={item.link} className="text-base 2xl:text-xl font-semibold text-customGray">
+                  <Link href={item.link} className="text-base lg:text-xs xl:text-xm 2xl:text-base font-semibold text-customGray">
                     {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
-            <a href="#" className='btn'>
+            <a href="#" className='btn lg:text-xs lg:text-xm 2xl:text-xl '>
               ZÍSKAJTE UKÁŽKU
             </a>
           </nav>

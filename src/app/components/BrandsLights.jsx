@@ -23,7 +23,7 @@ const BrandsLight = () => {
   return (
     <section className="bg-[#D3EDFC] py-12 relative">
       <div className="container">
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-8 ">
           {brandIcons.map((icon, index) => (
             <div key={index} className="flex justify-center items-center">
               <Image

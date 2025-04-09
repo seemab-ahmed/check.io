@@ -7,14 +7,14 @@ import iphoneImg from "@/app/images/iphone.png";
 
 const AppDownload = () => {
   return (
-    <section className="py-24">
+    <section className="py-10 xl:py-24">
       <div className="container">
-        <div className="grid grid-cols-2 gap-10 items-center max-w-[1024px] mx-auto w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-[1024px] mx-auto w-full">
           <div>
-            <h2 className="text-[40px] font-semibold leading-tight text-customDarkGrayLight mb-6">
+            <h2 className="text-3xl xl:text-[40px] font-semibold leading-tight text-customDarkGrayLight mb-6">
               Vyskúšajte 15 dní zadarmo
             </h2>
-            <p className="max-w-[668px] w-full text-lg font-normal leading-normal text-customDarkGrayLight mb-6">
+            <p className="max-w-[668px] w-full text-base md:text-lg font-normal leading-normal text-customDarkGrayLight mb-6">
               Vyskúšajte, aké jednoduché je vyriešiť evidenciu dochádzky vo
               vašej firme. Cena za používanie dochádzkového systému je 1€ bez
               DPH /zamestnanec / mesiac.

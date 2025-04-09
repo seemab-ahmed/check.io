@@ -6,18 +6,18 @@ import dottedBorder from '@/app/images/gradient-dotted-border.svg';
 
 const OurPrices = () => {
   return (
-    <section className="py-16 relative">
+    <section className="py-10 xl:py-16 relative">
       <div className="container">
-        <div className="text-center mb-10">
-          <h2 className="text-[40px] font-semibold leading-tight text-customBlue mb-6">
+        <div className="text-center mb-0 md:mb-10">
+          <h2 className="text-3xl xl:text-[40px] font-semibold leading-tight text-customBlue mb-1 md:mb-6">
             <span className="text-customDarkGrayLight">Naše</span> ceny
           </h2>
         </div>
         <div
-          className="bg-cover bg-center bg-no-repeat py-32"
+          className="bg-cover bg-center bg-no-repeat py-20 xl:py-32 px-3 md:px-0"
           style={{ backgroundImage: `url(${PricesBg.src})` }}
         >
-          <p className="text-lg font-normal leading-normal text-[#545454] text-center">
+          <p className="text-base xl:text-lg font-normal leading-normal text-[#545454] text-center">
             Cena za používanie dochádzkového systému je 1€ bez DPH / zamestnanec
             / mesiac
           </p>
@@ -29,7 +29,7 @@ const OurPrices = () => {
               / zamestnanec / mesiac bez DPH
             </p>
           </div>
-          <p className="text-lg font-normal leading-normal text-[#545454] text-center max-w-[840px] w-full mx-auto">
+          <p className="text-base xl:text-lg font-normal leading-normal text-[#545454] text-center max-w-[840px] w-full mx-auto">
             Platíte len za zamestnancov, ktorí evidujú dochádzku v kalendárnom
             mesiaci. Ak zamestnanec neevidoval dochádzku v kalendárnom mesiaci,
             nebude zahrnutá do fakturácie. Žiadne ďalšie náklady, žiadne

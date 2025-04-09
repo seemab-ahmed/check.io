@@ -60,14 +60,14 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16">
+    <section className="py-10 xl:py-16">
       <div className="container">
         {/* Header */}
         <div className="flex flex-col justify-center items-center mb-10">
-          <span className="h-[60px] max-w-fit flex items-center justify-center px-3 text-2xl font-medium text-customBlue rounded-[10px] bg-white border border-[#F3ECFF] mb-6">
+          <span className="h-10 md:h-[60px] max-w-fit flex items-center justify-center px-3 text-base md:text-2xl font-medium text-customBlue rounded-[10px] bg-white border border-[#F3ECFF] mb-6">
             Posudky
           </span>
-          <h2 className="text-[40px] font-semibold leading-tight text-customDarkGrayLight">
+          <h2 className="text-3xl xl:text-[40px] font-semibold leading-tight text-customDarkGrayLight">
             Príbehy používateľov
           </h2>
         </div>
@@ -77,7 +77,7 @@ const Testimonials = () => {
           <div className="border-[2px] border-[#CEE8FF] rounded-[18px] bg-[#EBF5FF] p-[26px] pb-[84px] overflow-hidden">
             <div className="relative w-full overflow-hidden">
               <motion.div
-                className="flex gap-10"
+                className="flex gap-4 md:gap-10 "
                 animate={{ x: `-${currentIndex * (100 / cardsPerPage)}%` }}
                 transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
                 style={{ width: `${(testimonialsCards.length / cardsPerPage) * 100}%` }}
@@ -85,25 +85,25 @@ const Testimonials = () => {
                 {testimonialsCards.map((item, index) => (
                   <div
                     key={`${item.title}-${index}`}
-                    className="w-1/3 shrink-0 bg-white rounded-xl p-1.5"
+                    className="w-1/2 md:w-1/3 2xl:w-1/5 shrink-0 bg-white rounded-xl p-1.5"
                   >
-                    <div className="border border-[#C8E3FF] bg-white rounded-[10px] p-8 h-full transition-all duration-300">
-                      <div className="flex items-center justify-between gap-5 mb-4">
-                        <div className="flex items-center gap-5">
+                    <div className="border border-[#C8E3FF] bg-white rounded-[10px] p-3 md:p-8 h-full transition-all duration-300">
+                      <div className="  flex items-center justify-between gap-5 mb-4">
+                        <div className=" flex-col md:flex-row flex items-center gap-5">
                           <figure>
                             <Image
                               src={item.image}
                               alt={item.title}
-                              className="mx-auto rounded-full w-[70px] h-[70px] object-cover"
-                              width={70}
-                              height={70}
+                              className="mx-auto rounded-full w-10 md:w-[70px] h-10 md:h-[70px] object-cover"
+                              width={'100%'}
+                              height={'100%'}
                             />
                           </figure>
-                          <div className="max-w-[calc(100%-90px)]">
-                            <h3 className="text-[22px] font-semibold text-[#2C2C2C]">
+                          <div className=" max-w-[calc(100%-10px)] md:max-w-[calc(100%-90px)] ">
+                            <h3 className="text-base md:text-xl xl:text-[22px] font-semibold text-[#2C2C2C]">
                               {item.title}
                             </h3>
-                            <span className="text-lg font-medium text-customBlue leading-none">
+                            <span className="text-sm md:text-base lg:text-lg font-medium text-customBlue leading-none">
                               {item.subTitle}
                             </span>
                           </div>
@@ -122,11 +122,11 @@ const Testimonials = () => {
         </div>
 
         {/* Navigation */}
-        <div className="p-3 rounded-[100px] max-w-[332px] w-full mx-auto bg-white -mt-14 flex items-center justify-between transition-all duration-300">
+        <div className="p-3 rounded-[100px] max-w-[280px] md:max-w-[332px] w-full mx-auto bg-white -mt-10 md:-mt-14 flex items-center justify-between transition-all duration-300">
           {/* Prev Arrow */}
           <button
             onClick={handlePrev}
-            className="w-[70px] h-[70px] rounded-full border border-[#CEE8FF] bg-[#EBF5FF] hover:bg-[#d7e9ff] flex justify-center items-center transition-all duration-300"
+            className="w-10 md:w-[70px] h-10 md:h-[70px] rounded-full border border-[#CEE8FF] bg-[#EBF5FF] hover:bg-[#d7e9ff] flex justify-center items-center transition-all duration-300"
             aria-label="Previous testimonial"
           >
             <Image src={arrowPrev} alt="Previous" width={20} height={20} />
@@ -139,8 +139,8 @@ const Testimonials = () => {
             }).map((_, i) => (
               <span
                 key={i}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  i === currentIndex ? "bg-customBlue" : "bg-[#CEE8FF]"
+                className={`w-7 h-1 rounded-lg   transition-all duration-300 ${
+                  i === currentIndex ? "bg-customBlue" : "bg-[#DE4278]"
                 }`}
               />
             ))}
@@ -149,7 +149,7 @@ const Testimonials = () => {
           {/* Next Arrow */}
           <button
             onClick={handleNext}
-            className="w-[70px] h-[70px] rounded-full border border-[#CEE8FF] bg-[#EBF5FF] hover:bg-[#d7e9ff] flex justify-center items-center transition-all duration-300"
+            className="w-10 md:w-[70px] h-10 md:h-[70px] rounded-full border border-[#CEE8FF] bg-[#EBF5FF] hover:bg-[#d7e9ff] flex justify-center items-center transition-all duration-300"
             aria-label="Next testimonial"
           >
             <Image src={arrowNext} alt="Next" width={20} height={20} />

@@ -42,26 +42,26 @@ const QuickActionSteps = () => {
   return (
     <section className="relative">
       <div className="container">
-        <div className="grid grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <Image src={quickDetailImg} alt="detail-img" className="w-full" />
           <div>
-            <span className="h-[60px] max-w-fit flex items-center justify-center px-3 text-2xl font-medium text-customBlue rounded-[10px] bg-white border border-[#F3ECFF] mb-6">
+            <span className="h-10 md:h-[60px] max-w-fit flex items-center justify-center px-3 text-base md:text-xl xl:text-2xl font-medium text-customBlue rounded-[10px] bg-white border border-[#F3ECFF] mb-6">
               Aktivácia
             </span>
-            <h2 className="text-[40px] font-semibold leading-tight text-customDarkGrayLight">
+            <h2 className="text-3xl xl:text-[40px] font-semibold leading-tight text-customDarkGrayLight">
               Rýchla <span className="text-customBlue">aktivácia</span> v 4
               krokoch
             </h2>
           </div>
         </div>
         <div className="p-1.5 rounded-[20px]">
-          <div className="steps-detail-row grid grid-cols-4 items-start">
+          <div className="steps-detail-row grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 xl:gap-0 items-start">
             {steps.map((item) => (
               <div
                 key={item.id}
-                className="step-card border-[2px] border-[#CEE8FF] rounded-[18px] bg-[#EBF5FF] p-[26px]"
+                className="step-card h-full xl:h-auto border-[2px] border-[#CEE8FF] rounded-[18px] bg-[#EBF5FF] p-5 md:p-[26px]"
               >
-                <div className="bg-white rounded-xl p-1.5">
+                <div className="bg-white h-full xl:h-auto rounded-xl p-1.5">
                   <div className="border border-[#C8E3FF] bg-white rounded-[10px] p-4 h-full">
                     <figure className="mb-5">
                       <Image
@@ -76,10 +76,10 @@ const QuickActionSteps = () => {
                         </span>
                       </div>
                     </figure>
-                    <h3 className="text-[20px] font-semibold text-customBlue mb-2">
+                    <h3 className="text-base md:text-lg xl:text-[20px] font-semibold text-customBlue mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-base text-[#6B6B6B] leading-normal">
+                    <p className="text-sm md:text-base text-[#6B6B6B] leading-normal">
                       {item.description}
                     </p>
                   </div>
@@ -89,7 +89,7 @@ const QuickActionSteps = () => {
           </div>
         </div>
       </div>
-      <div className="w-[180px] h-[180px] rounded-full bg-custom-gradient absolute -left-[120px] -bottom-[58px]"></div>
+      <div className="w-[100px] md:w-[180px] h-[100px] md:h-[180px] rounded-full bg-custom-gradient absolute -left-[70px] md:-left-[120px] -bottom-[58px]"></div>
     </section>
   );
 };
