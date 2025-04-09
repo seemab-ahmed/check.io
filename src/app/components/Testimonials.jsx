@@ -1,7 +1,10 @@
 "use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 import Image from "next/image";
+import "swiper/css";
+
 import clientImg1 from "@/app/images/client1.png";
 import clientImg2 from "@/app/images/client2.png";
 import clientImg3 from "@/app/images/client3.png";
@@ -14,8 +17,7 @@ const testimonialsCards = [
     image: clientImg1,
     title: "Simona Hudáková",
     subTitle: "Manažérka hotela",
-    description:
-      "Aplikácia qrdochadzka.sk priniesla výraznú zmenu v našom hoteli...",
+    description: "Aplikácia qrdochadzka.sk priniesla výraznú zmenu v našom hoteli...",
   },
   {
     image: clientImg2,
@@ -35,28 +37,18 @@ const testimonialsCards = [
     subTitle: "Test repeat",
     description: "Another testimonial to show movement",
   },
-  {
-    image: clientImg2,
-    title: "Simona Hudáková",
-    subTitle: "Owner",
-    description: "Fifth testimonial for testing.",
-  },
 ];
 
 const Testimonials = () => {
+  const swiperRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsPerPage = 3;
 
   const handlePrev = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? testimonialsCards.length - cardsPerPage : prev - 1
-    );
+    if (swiperRef.current) swiperRef.current.slidePrev();
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) =>
-      (prev + 1) % (testimonialsCards.length - cardsPerPage + 1)
-    );
+    if (swiperRef.current) swiperRef.current.slideNext();
   };
 
   return (
@@ -72,34 +64,43 @@ const Testimonials = () => {
           </h2>
         </div>
 
-        {/* Carousel */}
+        {/* Swiper Carousel */}
         <div className="p-1.5 rounded-[20px] bg-white overflow-hidden">
           <div className="border-[2px] border-[#CEE8FF] rounded-[18px] bg-[#EBF5FF] p-[26px] pb-[84px] overflow-hidden">
-            <div className="relative w-full overflow-hidden">
-              <motion.div
-                className="flex gap-4 md:gap-10 "
-                animate={{ x: `-${currentIndex * (100 / cardsPerPage)}%` }}
-                transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
-                style={{ width: `${(testimonialsCards.length / cardsPerPage) * 100}%` }}
-              >
-                {testimonialsCards.map((item, index) => (
-                  <div
-                    key={`${item.title}-${index}`}
-                    className="w-1/2 md:w-1/3 2xl:w-1/5 shrink-0 bg-white rounded-xl p-1.5"
-                  >
+            <Swiper
+              modules={[Navigation]}
+              loop={true}
+              slidesPerView={1}
+              spaceBetween={20}
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+                setCurrentIndex(swiper.realIndex);
+              }}
+              onSlideChange={(swiper) => {
+                setCurrentIndex(swiper.realIndex);
+              }}
+              breakpoints={{
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+              className="!overflow-visible"
+            >
+              {testimonialsCards.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div className="w-full shrink-0 bg-white rounded-xl p-1.5">
                     <div className="border border-[#C8E3FF] bg-white rounded-[10px] p-3 md:p-8 h-full transition-all duration-300">
-                      <div className="  flex items-center justify-between gap-5 mb-4">
-                        <div className=" flex-col md:flex-row flex items-center gap-5">
+                      <div className="flex items-center justify-between gap-5 mb-4">
+                        <div className="flex-col md:flex-row flex md:items-center gap-2 md:gap-5">
                           <figure>
                             <Image
                               src={item.image}
                               alt={item.title}
                               className="mx-auto rounded-full w-10 md:w-[70px] h-10 md:h-[70px] object-cover"
-                              width={'100%'}
-                              height={'100%'}
+                              width="100"
+                              height="100"
                             />
                           </figure>
-                          <div className=" max-w-[calc(100%-10px)] md:max-w-[calc(100%-90px)] ">
+                          <div className="max-w-[calc(100%-10px)] md:max-w-[calc(100%-90px)]">
                             <h3 className="text-base md:text-xl xl:text-[22px] font-semibold text-[#2C2C2C]">
                               {item.title}
                             </h3>
@@ -115,15 +116,14 @@ const Testimonials = () => {
                       </p>
                     </div>
                   </div>
-                ))}
-              </motion.div>
-            </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
 
         {/* Navigation */}
         <div className="p-3 rounded-[100px] max-w-[280px] md:max-w-[332px] w-full mx-auto bg-white -mt-10 md:-mt-14 flex items-center justify-between transition-all duration-300">
-          {/* Prev Arrow */}
           <button
             onClick={handlePrev}
             className="w-10 md:w-[70px] h-10 md:h-[70px] rounded-full border border-[#CEE8FF] bg-[#EBF5FF] hover:bg-[#d7e9ff] flex justify-center items-center transition-all duration-300"
@@ -132,21 +132,17 @@ const Testimonials = () => {
             <Image src={arrowPrev} alt="Previous" width={20} height={20} />
           </button>
 
-          {/* Dots */}
           <div className="flex gap-2">
-            {Array.from({
-              length: testimonialsCards.length - cardsPerPage + 1,
-            }).map((_, i) => (
+            {Array.from({ length: testimonialsCards.length }).map((_, i) => (
               <span
                 key={i}
-                className={`w-7 h-1 rounded-lg   transition-all duration-300 ${
+                className={`w-7 h-1 rounded-lg transition-all duration-300 ${
                   i === currentIndex ? "bg-customBlue" : "bg-[#DE4278]"
                 }`}
               />
             ))}
           </div>
 
-          {/* Next Arrow */}
           <button
             onClick={handleNext}
             className="w-10 md:w-[70px] h-10 md:h-[70px] rounded-full border border-[#CEE8FF] bg-[#EBF5FF] hover:bg-[#d7e9ff] flex justify-center items-center transition-all duration-300"
