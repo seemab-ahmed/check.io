@@ -5,11 +5,12 @@ import contactImg from '@/app/images/contact-img.png';
 import emailIcon from '@/app/images/email-icon.svg';
 import passwordIcon from '@/app/images/password-icon.svg';
 
+// contact us page
 const ContactUs = () => {
   return (
     <section>
       <div className="container">
-        <div className="p-1.5 rounded-[20px] bg-white">
+        <div className="p-1.5 rounded-[20px] bg-white ">
           <div className="border-[2px] border-[#CEE8FF] rounded-[18px] bg-[#EBF5FF] p-5 md:py-8 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-[70px]">
             <div>
               <Image src={contactImg} alt="Contact" width={'100%'} height={'100%'} />
