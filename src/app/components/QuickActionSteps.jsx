@@ -62,7 +62,7 @@ const QuickActionSteps = () => {
                 className="step-card h-full xl:h-auto border-[2px] border-[#CEE8FF] rounded-[18px] bg-[#EBF5FF] p-5 md:p-[26px]"
               >
                 <div className="bg-white h-full xl:h-auto rounded-xl p-1.5">
-                  <div className="border border-[#C8E3FF] bg-white rounded-[10px] p-4 h-full">
+                  <div className="border border-[#C8E3FF] bg-white rounded-[10px] p-4 h-full hover:shadow-lg transition-all duration-300 ease-in-out">
                     <figure className="mb-5">
                       <Image
                         src={item.image}
