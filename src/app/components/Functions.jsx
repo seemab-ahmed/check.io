@@ -84,7 +84,7 @@ const Functions = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 border-[2px] border-[#CEE8FF] rounded-[18px] bg-[#EBF5FF] p-5 lg:p-[26px]">
             {features.map((item, index) => (
               <div key={index} className="bg-white rounded-xl p-1.5">
-                <div className="border border-[#C8E3FF] bg-white rounded-[10px] p-5 md:py-8 md:px-10 h-full">
+                <div className="group border border-[#C8E3FF] bg-white rounded-[10px] p-5 md:py-8 md:px-10 h-full hover:bg-[#00427C] transition-all  duration-300 ease-in-out ">
                   <figure className="mb-6">
                     <Image
                       src={item.image}
@@ -94,10 +94,10 @@ const Functions = () => {
                       className="mx-auto"
                     />
                   </figure>
-                  <h3 className="text-base md:text-lg xl:text-[22px] font-semibold text-[#2C2C2C] mb-2 text-center">
+                  <h3 className="text-base md:text-lg xl:text-[22px] font-semibold text-[#2C2C2C] mb-2 text-center group-hover:text-white  transition-all  duration-300 ease-in-out ">
                     {item.title}
                   </h3>
-                  <p className="text-sm md:text-base text-[#6B6B6B] leading-normal text-center">
+                  <p className="text-sm md:text-base text-[#6B6B6B] leading-normal text-center group-hover:text-white  transition-all  duration-300 ease-in-out ">
                     {item.description}
                   </p>
                 </div>
