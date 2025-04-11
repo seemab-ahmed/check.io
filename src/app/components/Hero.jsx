@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import checkedIcon from '@/app/images/pink-checked.svg';
 import heroImg from '@/app/images/hero-img.png';
+import AOSInit from './AOSInit';
 
 const heroFeatures = [
   "Možnosť GPS lokalizácie príletov a odletov",
@@ -13,6 +14,8 @@ const heroFeatures = [
 
 const Hero = () => {
   return (
+   <>
+   <AOSInit />
     <section className="pt-40 xl:pt-[288px] pb-10 md:pb-20 xl:pb-[128px] relative">
       <div className="w-[880px] h-[880px] bg-customLightBlue rounded-full absolute -right-[305px] -top-[270px] -z-[1]"></div>
       <div className="container">
@@ -37,12 +40,13 @@ const Hero = () => {
             </ul>
             <a href="#" className="btn text-sm md:text-xl h-10 md:h-11 ">Získajte ukážku</a>
           </div>
-          <div>
+          <div data-aos="fade-left"  data-aos-duration="700">
             <Image src={heroImg} alt="hero-img" width={'100%'} height={'100%'} priority />
           </div>
         </div>
       </div>
     </section>
+   </>
   );
 };
 

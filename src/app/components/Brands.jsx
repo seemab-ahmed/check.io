@@ -78,12 +78,11 @@ const Brands = () => {
         {/* Desktop Grid */}
         <div className="hidden xl:grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-8 relative z-20">
           {brandIcons.map((icon, index) => (
-            <div key={index} className="flex justify-center items-center">
+            <div key={index} className="flex justify-center items-center transform hover:scale-105 transition-all duration-300 ease-in-out">
               <Image
                 className="w-full"
                 src={icon}
                 alt={`Brand ${index + 1}`}
-
               />
             </div>
           ))}

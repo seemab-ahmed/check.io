@@ -49,7 +49,7 @@ const Header = () => {
             <ul className="flex items-center gap-5 2xl:gap-10">
               {navItems.map((item, index) => (
                 <li key={index}>
-                  <Link href={item.link} className="text-base lg:text-xs xl:text-xm 2xl:text-base font-semibold text-customGray">
+                  <Link href={item.link} className="text-base lg:text-xs xl:text-xm 2xl:text-base font-semibold text-customGray hover:text-[#de4278] transition-all  duration-300 ease-in-out">
                     {item.name}
                   </Link>
                 </li>
