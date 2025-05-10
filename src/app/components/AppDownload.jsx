@@ -4,9 +4,11 @@ import Image from "next/image";
 import appStoreBtn from "@/app/images/app-store.svg";
 import playStoreBtn from "@/app/images/goggle-play.svg";
 import iphoneImg from "@/app/images/iphone.png";
-
+import AOSInit from './AOSInit';
 const AppDownload = () => {
   return (
+  <>
+   <AOSInit />
     <section className="py-10 xl:py-24">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-[1024px] mx-auto w-full">
@@ -34,12 +36,13 @@ const AppDownload = () => {
               />
             </div>
           </div>
-          <div>
+          <div data-aos="fade-left"  data-aos-duration="700">
             <Image src={iphoneImg} alt="Logo" width={"100%"} height={"600"} />
           </div>
         </div>
       </div>
     </section>
+  </>
   );
 };
 
